@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+
+    envVars:
+      - key: N8N_BASIC_AUTH_ACTIVE
+        value: true
+      - key: N8N_BASIC_AUTH_USER
+        value: admin          # ← change if you want
+      - key: N8N_BASIC_AUTH_PASSWORD
+        value: MySuperSecret123!   # ← change to something strong
+      - key: GENERIC_TIMEZONE
+        value: Europe/London       # ← change to your timezone (or keep)
